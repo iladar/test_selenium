@@ -24,6 +24,4 @@ def test_yandex_images(setup):
     left_button.click()
     image = yandex_page.find_element((By.XPATH, '/html/body/div[12]/div[2]/div/div/div/div[3]/div/div[2]/div[1]/div[3]/div/img'))
     image_source2 = image.get_attribute("src")
-    print(image_source1)
-    print(image_source2)
     assert image_source1 == image_source2, 'images didnt match'
