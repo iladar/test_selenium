@@ -1,8 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 from BaseApp import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 
 class YandexSearch(BasePage):
 
@@ -52,9 +51,7 @@ class YandexImages(BasePage):
         left_button = self.find_element((By.CSS_SELECTOR, '.MediaViewer-ButtonPrev'))
         left_button.click()
 
-    def wait_url_change(self, time=10):
-        wait = WebDriverWait(self.driver, time, 0.3)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.MMImage-Origin')))
+
 
 
 
