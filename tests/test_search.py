@@ -16,6 +16,6 @@ def test_yandex_search(setup):
         url = yandex_page.get_link_url(link)
         if url.find('tensor.ru') > 0:
             link_finded=True
-    assert link_finded, 'links not finded'
+    assert link_finded, 'link to tensor.ru not finded'
 
 
