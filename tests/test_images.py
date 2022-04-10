@@ -17,7 +17,7 @@ def test_yandex_images(setup):
     assert first_image_text == search_text, 'image text and search text didnt match'
     first_image_in_category = yandex_page.get_first_image_in_category()
     first_image_in_category.click()
-    yandex_page.change_window()
+    yandex_page.wait_url_change()
     link_2 = yandex_page.get_current_url()
     assert link_1 != link_2, 'opened same page'
     image = yandex_page.get_image()
