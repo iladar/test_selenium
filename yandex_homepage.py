@@ -28,5 +28,30 @@ class YandexImages(BasePage):
     def change_window(self):
         self.go_to_chosen_window(1)
 
+    def get_first_image(self):
+        return self.find_element((By.CSS_SELECTOR, '.PopularRequestList-Item_pos_0'))
+
+    def get_image_text(self):
+        return self.find_element((By.CSS_SELECTOR, '.PopularRequestList-Item_pos_0 .PopularRequestList-SearchText')).text
+
+    def get_search_text(self):
+        return self.find_element((By.CSS_SELECTOR, '.input__control.mini-suggest__input')).get_attribute("value")
+
+    def get_first_image_in_category(self):
+        return self.find_element((By.CSS_SELECTOR, '.serp-item__link'))
+
+    def get_image(self):
+        return self.find_element((By.XPATH, '/html/body/div[12]/div[2]/div/div/div/div[3]/div/div[2]/div[1]/div[3]/div/img'))
+
+    def slide_right(self):
+        right_button = self.find_element((By.CSS_SELECTOR, '.MediaViewer-ButtonNext'))
+        right_button.click()
+
+    def slide_left(self):
+        left_button = self.find_element((By.CSS_SELECTOR, '.MediaViewer-ButtonPrev'))
+        left_button.click()
+
+
+
 
 
